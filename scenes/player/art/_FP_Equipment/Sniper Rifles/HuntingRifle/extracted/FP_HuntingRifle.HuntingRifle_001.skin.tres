@@ -1,0 +1,26 @@
+[gd_resource type="Skin" format=3 uid="uid://xg2r0rd3orbd"]
+
+[resource]
+resource_name = "Skin"
+bind_count = 7
+bind/0/name = &"Weapon"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, -1.3437874e-07, -1.934778e-06, 1.1172432e-09, -0.9975566, 0.069862075, -1.9393904e-06, -0.069862075, -0.99753124, 2.5416832e-06, -0.27077082, 1.3103278)
+bind/1/name = &"Magazine"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, -9.536743e-07, 0, 0, 0, 1, -9.536743e-07, -1, 0, -2.4522052e-07, -1.0966183, -0.25715977)
+bind/2/name = &"Bolt1"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, -1.1046701e-06, 0, -1, 0, -1.1046701e-06, 0, -1, -0.00020977615, -0.20464982, 1.3639803)
+bind/3/name = &"Trigger"
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 1.4305115e-06, 0, 0, 0, -1, -1.4305115e-06, 1, 0, 3.58533e-07, 1.3083795, 0.2508855)
+bind/4/name = &"Bullet1"
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, -2.2967631e-06, 0, -1, 0, -2.2967631e-06, 0, -1, 2.7405897e-06, -0.25293505, 1.19324)
+bind/5/name = &"Bullet2"
+bind/5/bone = -1
+bind/5/pose = Transform3D(1, -2.6226044e-06, 0, 0, 0, 1, -2.6226044e-06, -1, 0, -7.213331e-07, -1.0989416, -0.27481258)
+bind/6/name = &"Rope"
+bind/6/bone = -1
+bind/6/pose = Transform3D(1, 1.9073486e-06, 0, 0, 0, -1, -1.9073486e-06, 1, 0, 1.2387704e-06, 1.3194696, 0.649279)

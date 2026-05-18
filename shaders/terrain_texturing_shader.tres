@@ -1,0 +1,112 @@
+[gd_resource type="VisualShader" format=3 uid="uid://d0smi3cv1s6m6"]
+
+[ext_resource type="Texture2D" uid="uid://bxuwa3ks1ck45" path="res://Assets/TerrainTextures/grass/rocky-rugged-terrain_1_albedo.png" id="1_74k74"]
+[ext_resource type="Texture2D" uid="uid://dp7qlcy6xagu8" path="res://Assets/TerrainTextures/grass/patchy-meadow1_albedo.png" id="2_iulr7"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_stnhj"]
+linked_parent_graph_frame = 17
+source = 5
+texture = ExtResource("1_74k74")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_0e6cp"]
+linked_parent_graph_frame = 17
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_iagif"]
+linked_parent_graph_frame = 17
+parameter_name = "Noise_Weight"
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_n807v"]
+linked_parent_graph_frame = 17
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_dl17h"]
+linked_parent_graph_frame = 17
+parameter_name = "Albedo_B_Uv_Scale"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_6mer6"]
+linked_parent_graph_frame = 17
+function = 1
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_g47jg"]
+linked_parent_graph_frame = 17
+parameter_name = "Albedo_A_Uv_Scale"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_jppi6"]
+size = Vector2(1494.0004, 1611.0002)
+title = "Albedo Blending & Noise Detailing"
+tint_color_enabled = true
+tint_color = Color(0.114471436, 0.47265625, 0.35512686, 0.75)
+attached_nodes = PackedInt32Array(16, 11, 6, 12, 8, 7, 3, 13, 14, 15, 2, 9, 10)
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_dhxg1"]
+linked_parent_graph_frame = 17
+parameter_name = "Albedo_A"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_2ta0m"]
+linked_parent_graph_frame = 17
+parameter_name = "Albedo_B"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_4l5ou"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+linked_parent_graph_frame = 17
+op_type = 3
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_ohrbq"]
+linked_parent_graph_frame = 17
+parameter_name = "Noise"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fwiwv"]
+linked_parent_graph_frame = 17
+source = 5
+texture = ExtResource("2_iulr7")
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_n1qft"]
+linked_parent_graph_frame = 17
+source = 5
+texture = ExtResource("2_iulr7")
+texture_type = 1
+
+[resource]
+nodes/fragment/0/position = Vector2(500, 60)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_dhxg1")
+nodes/fragment/2/position = Vector2(-2280, -160)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_2ta0m")
+nodes/fragment/3/position = Vector2(-2280, 460)
+nodes/fragment/6/node = SubResource("VisualShaderNodeMix_4l5ou")
+nodes/fragment/6/position = Vector2(-1540, 60)
+nodes/fragment/7/node = SubResource("VisualShaderNodeTexture2DParameter_ohrbq")
+nodes/fragment/7/position = Vector2(-2280, 840)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_fwiwv")
+nodes/fragment/8/position = Vector2(-1800, 720)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_n1qft")
+nodes/fragment/9/position = Vector2(-1820, -220)
+nodes/fragment/10/node = SubResource("VisualShaderNodeTexture_stnhj")
+nodes/fragment/10/position = Vector2(-1800, 400)
+nodes/fragment/11/node = SubResource("VisualShaderNodeFloatOp_0e6cp")
+nodes/fragment/11/position = Vector2(-1460, 440)
+nodes/fragment/12/node = SubResource("VisualShaderNodeFloatParameter_iagif")
+nodes/fragment/12/position = Vector2(-1460, 740)
+nodes/fragment/13/node = SubResource("VisualShaderNodeUVFunc_n807v")
+nodes/fragment/13/position = Vector2(-2240, 200)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatParameter_dl17h")
+nodes/fragment/14/position = Vector2(-2620, 360)
+nodes/fragment/15/node = SubResource("VisualShaderNodeUVFunc_6mer6")
+nodes/fragment/15/position = Vector2(-2240, -380)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFloatParameter_g47jg")
+nodes/fragment/16/position = Vector2(-2600, -320)
+nodes/fragment/17/node = SubResource("VisualShaderNodeFrame_jppi6")
+nodes/fragment/17/position = Vector2(-2660, -421)
+nodes/fragment/connections = PackedInt32Array(7, 0, 8, 2, 6, 0, 0, 0, 9, 0, 6, 0, 10, 0, 6, 1, 2, 0, 9, 2, 3, 0, 10, 2, 8, 0, 11, 0, 11, 0, 6, 2, 12, 0, 11, 1, 13, 0, 10, 0, 14, 0, 13, 1, 16, 0, 15, 1, 15, 0, 9, 0)

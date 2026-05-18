@@ -1,0 +1,14 @@
+[gd_resource type="Skin" format=3 uid="uid://bprg4m4repmo7"]
+
+[resource]
+resource_name = "Skin"
+bind_count = 3
+bind/0/name = &"Weapon"
+bind/0/bone = -1
+bind/0/pose = Transform3D(0.9999932, 0.0026021288, -3.8941303e-07, 0.0026021467, -0.99999666, -3.44168e-15, -3.8941303e-07, -1.0133098e-09, -1, -0.00071660883, -0.24996774, 1.4640309)
+bind/1/name = &"Trigger"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, -1.3430887e-06, 0, -1, 0, -1.3430887e-06, 0, -1, -0.0013703326, -0.24994345, 1.46409)
+bind/2/name = &"Pump"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, -1.5815073e-06, 0, -1, 0, -1.5815073e-06, 0, -1, -0.0013572639, -0.24996036, 1.464032)

@@ -1,0 +1,19 @@
+# Godot 4+ specific ignores
+.godot/
+*.import
+*.godot
+*.uid
+/android/
+/assets/
+/flattend_context_files/
+
+# Asset Ignores
+*.png
+*.fbx
+*.glb
+*.jpg
+*.tga
+*.obj
+*.mtl
+*.anim
+*.mesh

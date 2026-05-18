@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://bdqvelgrqoi21"]
+
+[ext_resource type="Script" uid="uid://dkrte3netc7a5" path="res://scenes/player/scripts/inventory_item.gd" id="1_7w557"]
+[ext_resource type="PackedScene" uid="uid://b3die8tg65341" path="res://scenes/weapons/player_scenes/unarmed.tscn" id="1_v4ubj"]
+[ext_resource type="Texture2D" uid="uid://dblepfuvv8fuu" path="res://Assets/InventoryIcons/Unarmed_Icon.PNG" id="2_kosq2"]
+
+[resource]
+script = ExtResource("1_7w557")
+item_name = &"Unarmed"
+item_id = 2
+is_weapon = true
+icon = ExtResource("2_kosq2")
+game_scene = ExtResource("1_v4ubj")
+metadata/_custom_type_script = "uid://dkrte3netc7a5"

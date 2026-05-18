@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c48hdkket6myv"]
+
+[ext_resource type="Script" uid="uid://vlx0vbam4lhu" path="res://addons/jg_asset_packer/ui/jg_scene_resources.gd" id="1_80waf"]
+
+[node name="SceneResources" type="Control" unique_id=79319053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80waf")
+
+[node name="Tree" type="Tree" parent="." unique_id=249555957]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+columns = 2
+column_titles_visible = true
+hide_root = true

@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="GlobalSoundLibraryResource" format=3 uid="uid://cd73yqbijjtp8"]
+
+[ext_resource type="Script" uid="uid://jo7js3wlqxw5" path="res://shared_scripts/global_sound_library_resource.gd" id="1_0qixh"]
+[ext_resource type="AudioStream" uid="uid://c7u8g340bb14w" path="res://Assets/audio/footsteps/concrete/concrete_footstep_000.ogg" id="1_xuphn"]
+[ext_resource type="AudioStream" uid="uid://bnni554br42if" path="res://Assets/audio/footsteps/concrete/concrete_footstep_001.ogg" id="2_adbfg"]
+[ext_resource type="AudioStream" uid="uid://c38tbt8vesmb1" path="res://Assets/audio/footsteps/concrete/concrete_footstep_002.ogg" id="3_rj572"]
+[ext_resource type="AudioStream" uid="uid://dfy2ukrcxrote" path="res://Assets/audio/footsteps/concrete/concrete_footstep_003.ogg" id="4_1xiyt"]
+[ext_resource type="AudioStream" uid="uid://crifpgdsk2d7a" path="res://Assets/audio/footsteps/concrete/concrete_footstep_004.ogg" id="5_owquu"]
+[ext_resource type="AudioStream" uid="uid://c8u87t0x0l8yh" path="res://Assets/audio/footsteps/concrete/concrete_footstep_005.ogg" id="6_f5nhr"]
+[ext_resource type="AudioStream" uid="uid://dcot3pxyu7t5x" path="res://Assets/audio/footsteps/grass/grass_footstep_000.wav" id="7_hmeba"]
+[ext_resource type="AudioStream" uid="uid://dfbcgal8663wi" path="res://Assets/audio/footsteps/grass/grass_footstep_001.wav" id="8_kt8au"]
+[ext_resource type="AudioStream" uid="uid://dqpxodpkuy3pd" path="res://Assets/audio/footsteps/grass/grass_footstep_002.wav" id="9_vv5ri"]
+[ext_resource type="AudioStream" uid="uid://bois81bs4tgxs" path="res://Assets/audio/footsteps/grass/grass_footstep_003.wav" id="10_55xyt"]
+[ext_resource type="AudioStream" uid="uid://bs80r6ra70k1y" path="res://Assets/audio/footsteps/grass/grass_footstep_004.wav" id="11_v2cr2"]
+[ext_resource type="AudioStream" uid="uid://11x1djimbenv" path="res://Assets/audio/footsteps/grass/grass_footstep_005.wav" id="12_nsxmf"]
+[ext_resource type="AudioStream" uid="uid://datmryu6ige8o" path="res://Assets/audio/footsteps/gravel/gravel_footstep_000.ogg" id="13_ap8e8"]
+[ext_resource type="AudioStream" uid="uid://c3e3kopxpva1n" path="res://Assets/audio/footsteps/gravel/gravel_footstep_001.ogg" id="14_4xbf0"]
+[ext_resource type="AudioStream" uid="uid://bxeugkb5ks5jx" path="res://Assets/audio/footsteps/gravel/gravel_footstep_002.ogg" id="15_lmniv"]
+[ext_resource type="AudioStream" uid="uid://4vsm2udbf2m2" path="res://Assets/audio/footsteps/gravel/gravel_footstep_003.ogg" id="16_s0hn0"]
+[ext_resource type="AudioStream" uid="uid://crbbsjtnbnrxg" path="res://Assets/audio/footsteps/gravel/gravel_footstep_004.ogg" id="17_sp2aj"]
+[ext_resource type="AudioStream" uid="uid://dvkpwgenxklwo" path="res://Assets/audio/footsteps/gravel/gravel_footstep_005.ogg" id="18_kylsv"]
+[ext_resource type="AudioStream" uid="uid://b2tghu862suqm" path="res://Assets/audio/footsteps/metal/metal_footstep_000.ogg" id="19_rqrwb"]
+[ext_resource type="AudioStream" uid="uid://3ewgok0b7e12" path="res://Assets/audio/footsteps/metal/metal_footstep_001.ogg" id="20_mhlt0"]
+[ext_resource type="AudioStream" uid="uid://8a4t32as0o0l" path="res://Assets/audio/footsteps/metal/metal_footstep_002.ogg" id="21_vlpul"]
+[ext_resource type="AudioStream" uid="uid://kwo36an2gbj3" path="res://Assets/audio/footsteps/metal/metal_footstep_003.ogg" id="22_ly735"]
+[ext_resource type="AudioStream" uid="uid://bcbrvw4wiiq0a" path="res://Assets/audio/footsteps/metal/metal_footstep_004.ogg" id="23_7cciw"]
+[ext_resource type="AudioStream" uid="uid://k1qvyfifwuya" path="res://Assets/audio/footsteps/metal/metal_footstep_005.ogg" id="24_egoed"]
+[ext_resource type="AudioStream" uid="uid://d2bammpor824u" path="res://Assets/audio/footsteps/water/water_footstep_000.ogg" id="26_178cj"]
+[ext_resource type="AudioStream" uid="uid://c23kj4c2gl6o" path="res://Assets/audio/footsteps/water/water_footstep_001.ogg" id="27_wwdtw"]
+[ext_resource type="AudioStream" uid="uid://fvby8wqv7mq" path="res://Assets/audio/footsteps/water/water_footstep_002.ogg" id="28_ek02i"]
+[ext_resource type="AudioStream" uid="uid://cu5nf7kc4lyhb" path="res://Assets/audio/footsteps/water/water_footstep_003.ogg" id="29_wojl5"]
+[ext_resource type="AudioStream" uid="uid://3mwf58fb4u8i" path="res://Assets/audio/footsteps/water/water_footstep_004.ogg" id="30_pd2md"]
+[ext_resource type="AudioStream" uid="uid://bw2rrkfjrjb0s" path="res://Assets/audio/footsteps/water/water_footstep_005.ogg" id="31_tp7vu"]
+[ext_resource type="AudioStream" uid="uid://bxxk8ctrto2o3" path="res://Assets/audio/footsteps/wood/wood_footstep_000.ogg" id="32_7ce6e"]
+[ext_resource type="AudioStream" uid="uid://c23jahhoufchy" path="res://Assets/audio/footsteps/wood/wood_footstep_001.ogg" id="33_p780s"]
+[ext_resource type="AudioStream" uid="uid://bcn5wkqhqcdri" path="res://Assets/audio/footsteps/wood/wood_footstep_002.ogg" id="34_rmmho"]
+[ext_resource type="AudioStream" uid="uid://dgikjhcd1b4p1" path="res://Assets/audio/footsteps/wood/wood_footstep_003.ogg" id="35_txqmm"]
+[ext_resource type="AudioStream" uid="uid://bf4dhpvav1plu" path="res://Assets/audio/footsteps/wood/wood_footstep_004.ogg" id="36_1ju5x"]
+[ext_resource type="AudioStream" uid="uid://yhvyfvkxapaj" path="res://Assets/audio/footsteps/wood/wood_footstep_005.ogg" id="37_kokrv"]
+
+[resource]
+script = ExtResource("1_0qixh")
+concrete_array = Array[AudioStream]([ExtResource("1_xuphn"), ExtResource("2_adbfg"), ExtResource("3_rj572"), ExtResource("4_1xiyt"), ExtResource("5_owquu"), ExtResource("6_f5nhr")])
+grass_array = Array[AudioStream]([ExtResource("7_hmeba"), ExtResource("8_kt8au"), ExtResource("9_vv5ri"), ExtResource("10_55xyt"), ExtResource("11_v2cr2"), ExtResource("12_nsxmf")])
+gravel_array = Array[AudioStream]([ExtResource("13_ap8e8"), ExtResource("14_4xbf0"), ExtResource("15_lmniv"), ExtResource("16_s0hn0"), ExtResource("17_sp2aj"), ExtResource("18_kylsv")])
+metal_array = Array[AudioStream]([ExtResource("19_rqrwb"), ExtResource("20_mhlt0"), ExtResource("21_vlpul"), ExtResource("22_ly735"), ExtResource("23_7cciw"), ExtResource("24_egoed")])
+water_array = Array[AudioStream]([ExtResource("26_178cj"), ExtResource("27_wwdtw"), ExtResource("28_ek02i"), ExtResource("29_wojl5"), ExtResource("30_pd2md"), ExtResource("31_tp7vu")])
+wood_array = Array[AudioStream]([ExtResource("32_7ce6e"), ExtResource("33_p780s"), ExtResource("34_rmmho"), ExtResource("35_txqmm"), ExtResource("36_1ju5x"), ExtResource("37_kokrv")])
+metadata/_custom_type_script = "uid://jo7js3wlqxw5"

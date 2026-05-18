@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://53id2qy36rr8"]
+
+[ext_resource type="Script" uid="uid://dxqjcuh6ogfqm" path="res://scenes/maps/ResearchBase/scenes/player_controller.gd" id="1_y2ncc"]
+[ext_resource type="Script" uid="uid://bwv7qf28d5ax6" path="res://scenes/player/scripts/weapon_manager.gd" id="2_i6lh0"]
+[ext_resource type="Script" uid="uid://4c62ysoruseo" path="res://scenes/player/scripts/camera_manager.gd" id="2_kbfiq"]
+[ext_resource type="PackedScene" uid="uid://b3die8tg65341" path="res://scenes/weapons/player_scenes/unarmed.tscn" id="4_unolk"]
+[ext_resource type="Script" uid="uid://dkrte3netc7a5" path="res://scenes/player/scripts/inventory_item.gd" id="7_lp07f"]
+[ext_resource type="Script" uid="uid://80e42skcq30o" path="res://scenes/player/scripts/hud_manager.gd" id="9_lp07f"]
+[ext_resource type="Shader" uid="uid://camrcc7ct3lou" path="res://scenes/player/shaders/supression_effect_shader.gdshader" id="10_hyypn"]
+[ext_resource type="Script" uid="uid://ce5e8jlg7hq2q" path="res://scenes/player/scripts/suppression_manager.gd" id="10_unolk"]
+[ext_resource type="Resource" uid="uid://bm08oo1q48igr" path="res://scenes/player/art/_FP_Equipment/Assault Rifles/AKM/akm_inventory_item.tres" id="21_r6fjh"]
+[ext_resource type="Script" uid="uid://dtis625jgu00g" path="res://scenes/player/scripts/inventory_manager.gd.gd" id="23_b2rrm"]
+[ext_resource type="Script" uid="uid://sqpkymrm55nv" path="res://scenes/player/scripts/inventory_items_resource.gd" id="24_c862p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i6yrj"]
+radius = 0.3
+
+[sub_resource type="Resource" id="Resource_0x44c"]
+script = ExtResource("24_c862p")
+items = Array[ExtResource("7_lp07f")]([ExtResource("21_r6fjh")])
+metadata/_custom_type_script = "uid://sqpkymrm55nv"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp07f"]
+bg_color = Color(0.39688957, 0.39688915, 0.3968891, 0.25490198)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2h4h"]
+bg_color = Color(0.6, 0.6, 0.6, 0.10980392)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unolk"]
+bg_color = Color(0.44894964, 1.3055467e-06, 9.62615e-08, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyypn"]
+bg_color = Color(0.6, 0.6, 0.6, 0.10980392)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uffrv"]
+bg_color = Color(0, 0.25187358, 1.6845763e-07, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hyypn"]
+shader = ExtResource("10_hyypn")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+shader_parameter/pulse_strength = 0.326000015485
+shader_parameter/pulse_speed = 9.21200043757
+shader_parameter/noise_strength = 0.030000001425
+shader_parameter/distortion_strength = 0.0430000020425
+shader_parameter/chromatic_aberration = 0.002
+shader_parameter/blur_strength = 0.02
+shader_parameter/time = 0.0
+
+[node name="PlayerController" type="CharacterBody3D" unique_id=1577159589]
+collision_layer = 2
+script = ExtResource("1_y2ncc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=454485775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0229391, 0)
+shape = SubResource("CapsuleShape3D_i6yrj")
+
+[node name="CameraManager" type="Node3D" parent="." unique_id=703096273 node_paths=PackedStringArray("parent", "camera_pivot", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7806726, 0)
+script = ExtResource("2_kbfiq")
+parent = NodePath("..")
+camera_pivot = NodePath("CameraEffects/CameraPivot")
+camera = NodePath("CameraEffects/CameraPivot/Camera3D")
+
+[node name="CameraEffects" type="Node3D" parent="CameraManager" unique_id=1723898319]
+
+[node name="CameraPivot" type="Node3D" parent="CameraManager/CameraEffects" unique_id=2069424729]
+
+[node name="Camera3D" type="Camera3D" parent="CameraManager/CameraEffects/CameraPivot" unique_id=202632690]
+near = 0.001
+
+[node name="ViewModelRemoteTransform" type="RemoteTransform3D" parent="CameraManager/CameraEffects/CameraPivot/Camera3D" unique_id=1536179450]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 0, 0.18516374, -0.08504772)
+remote_path = NodePath("../../../../../WeaponManager/WeaponEffects")
+
+[node name="WeaponManager" type="Node3D" parent="." unique_id=1150119189]
+script = ExtResource("2_i6lh0")
+aim_speed = 20.0
+
+[node name="WeaponEffects" type="Node3D" parent="WeaponManager" unique_id=1116973888]
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 0, 1.9658363, -0.08504772)
+
+[node name="WeaponMount" type="Node3D" parent="WeaponManager/WeaponEffects" unique_id=1010400798]
+transform = Transform3D(0.9999995, 0, 1.4210855e-14, 0, 1, 0, -1.4210855e-14, 0, 0.9999995, 0.058296412, -1.7876229, -0.034733515)
+
+[node name="Unarmed" parent="WeaponManager/WeaponEffects" unique_id=753522072 instance=ExtResource("4_unolk")]
+
+[node name="InventoryManager" type="Control" parent="." unique_id=710525574]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_b2rrm")
+inventory_resource = SubResource("Resource_0x44c")
+metadata/_custom_type_script = "uid://dtis625jgu00g"
+
+[node name="HudManager" type="Control" parent="." unique_id=1447215442]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_lp07f")
+
+[node name="MarginContainer" type="MarginContainer" parent="HudManager" unique_id=1592259943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HudManager/MarginContainer" unique_id=1261004764]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=1795015336]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=1885641488]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=442202786]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=1150621739]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=762719799]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HudManager/MarginContainer/VBoxContainer" unique_id=1920034261]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 90
+
+[node name="PanelContainer" type="PanelContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=760151903]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer" unique_id=534464691]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer" unique_id=1791992883]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=698617193]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp07f")
+text = "Vitals"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=751725514]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp07f")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=1025223284]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15847212, 0.1584723, 0.15847275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_k2h4h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_unolk")
+value = 80.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=199279105]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32544062, 0.32544085, 0.32544157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_hyypn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uffrv")
+value = 80.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=458457900]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2123113068]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="HudManager/MarginContainer/VBoxContainer/HBoxContainer4" unique_id=892868505]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="VFXMarginContainer" type="MarginContainer" parent="HudManager" unique_id=586406069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HudManager/VFXMarginContainer" unique_id=410854234]
+
+[node name="ColorRect" type="ColorRect" parent="HudManager/VFXMarginContainer/CanvasLayer" unique_id=1510878726]
+material = SubResource("ShaderMaterial_hyypn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SuppressionManager" type="Node3D" parent="." unique_id=1124533712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4041271, 0)
+script = ExtResource("10_unolk")

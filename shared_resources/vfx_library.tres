@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GlobalVFXLibraryResource" format=3 uid="uid://de3agvop67y1v"]
+
+[ext_resource type="Script" uid="uid://dc2hfdm5n3k50" path="res://shared_scripts/global_vfx_library_resource.gd" id="1_wrtig"]
+
+[resource]
+script = ExtResource("1_wrtig")
+fire_array = Array[PackedScene]([null])
+metadata/_custom_type_script = "uid://dc2hfdm5n3k50"

@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://c1nf7nmr4ejp6"]
+
+[ext_resource type="Script" uid="uid://bx7hj8lgogvap" path="res://scenes/simulation_nodes/weather_simulation.gd" id="1_6hh23"]
+
+[node name="SimulationDebugPanel" type="Control" unique_id=573946463]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hh23")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1854787449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=331214419]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1127661470]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=546865680]
+layout_mode = 2
+
+[node name="TimeHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1310624543]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TimeTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=2127133937]
+layout_mode = 2
+text = "Time : "
+
+[node name="Hours" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=1787098430]
+layout_mode = 2
+text = "02"
+
+[node name="Delimiter" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=1839760600]
+layout_mode = 2
+text = ":"
+
+[node name="Minutes" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=424503883]
+layout_mode = 2
+text = "16"
+
+[node name="Delimiter2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=286882519]
+layout_mode = 2
+text = ":"
+
+[node name="Seconds" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeHbox" unique_id=517406524]
+layout_mode = 2
+text = "53"
+
+[node name="DateHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=675399649]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="DateTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=589738333]
+layout_mode = 2
+text = "Date : "
+
+[node name="Day" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=2072978670]
+layout_mode = 2
+text = "01"
+
+[node name="Delimiter" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=382862220]
+layout_mode = 2
+text = ":"
+
+[node name="Month" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=131840164]
+layout_mode = 2
+text = "01"
+
+[node name="Delimiter2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=1406990115]
+layout_mode = 2
+text = ":"
+
+[node name="Year" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DateHbox" unique_id=398670526]
+layout_mode = 2
+text = "2024"
+
+[node name="TimeScaleHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=915181954]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TimeScaleTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeScaleHbox" unique_id=66995227]
+layout_mode = 2
+text = "Time Scale : "
+
+[node name="TimeScaleValue" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TimeScaleHbox" unique_id=1306636766]
+layout_mode = 2
+text = "30"
+
+[node name="SeasonHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1283991870]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="SeasonTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SeasonHbox" unique_id=1962866726]
+layout_mode = 2
+text = "Current Season : "
+
+[node name="SeasonValue" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SeasonHbox" unique_id=651551890]
+layout_mode = 2
+text = "Summer"
+
+[node name="TemperatureHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=837705862]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TemperatureTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TemperatureHbox" unique_id=540893501]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Temperature : "
+
+[node name="TemperatureValue" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TemperatureHbox" unique_id=1891957710]
+layout_mode = 2
+size_flags_vertical = 0
+text = "29 "
+
+[node name="TemperatureUnit" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TemperatureHbox" unique_id=292878397]
+layout_mode = 2
+size_flags_vertical = 0
+text = "C"
+
+[node name="WeatherHbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1882796009]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="WeatherTitle" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox" unique_id=898689034]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Weather Forecast  : "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox" unique_id=99355236]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer" unique_id=354408644]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="WeatherTitle1" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer" unique_id=1625191867]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Chance of Rain : "
+
+[node name="WeatherValue1" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer" unique_id=295578304]
+layout_mode = 2
+size_flags_vertical = 0
+text = "20%"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer" unique_id=15325868]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="WeatherTitle2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer2" unique_id=132836423]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Wind Direction : "
+
+[node name="WeatherValue2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer2" unique_id=1411961982]
+layout_mode = 2
+size_flags_vertical = 0
+text = "NW"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer" unique_id=1755508692]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="WeatherTitle3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer3" unique_id=1254123456]
+layout_mode = 2
+text = "Wind Speed : "
+
+[node name="WeatherValue3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer3" unique_id=1115289410]
+layout_mode = 2
+text = "8.7"
+
+[node name="WeatherUnit3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WeatherHbox/VBoxContainer/HBoxContainer3" unique_id=651898869]
+layout_mode = 2
+text = "KM"

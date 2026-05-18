@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://d336bfb56dsd2"]
+
+[ext_resource type="Script" uid="uid://ca6lj5xvjdy1o" path="res://addons/jg_asset_packer/ui/jg_popup.gd" id="1_5erff"]
+[ext_resource type="PackedScene" uid="uid://c48hdkket6myv" path="res://addons/jg_asset_packer/ui/jg_scene_resources.tscn" id="2_xr4ns"]
+
+[node name="JgPopup" type="ConfirmationDialog" unique_id=1930262069]
+oversampling_override = 1.0
+title = "Collect Resources into Addon..."
+position = Vector2i(0, 36)
+size = Vector2i(500, 495)
+visible = true
+ok_button_text = "Collect"
+script = ExtResource("1_5erff")
+
+[node name="control" type="VBoxContainer" parent="." unique_id=1301282774]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 446.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="name" type="Control" parent="control" unique_id=1042180223]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+tooltip_text = "The Name of the collected addon to create."
+
+[node name="label" type="Label" parent="control/name" unique_id=1300490574]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 106.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Create Name:"
+vertical_alignment = 1
+
+[node name="value" type="LineEdit" parent="control/name" unique_id=1007509229]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "MyCollectedAddon"
+alignment = 2
+
+[node name="prefix" type="Control" parent="control" unique_id=1899726647]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+tooltip_text = "The prefix where the collected addon will be made."
+
+[node name="label" type="Label" parent="control/prefix" unique_id=522087842]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Prefix"
+vertical_alignment = 1
+
+[node name="value" type="LineEdit" parent="control/prefix" unique_id=2089097557]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "res://addons/"
+
+[node name="HSeparator2" type="HSeparator" parent="control" unique_id=705072157]
+layout_mode = 2
+
+[node name="SceneResources" parent="control" unique_id=79319053 instance=ExtResource("2_xr4ns")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="control" unique_id=1793832549]
+layout_mode = 2
+
+[node name="debug" type="Control" parent="control" unique_id=1141967583]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+tooltip_text = "The level of debug output. 
+Higher = more output."
+
+[node name="label" type="Label" parent="control/debug" unique_id=868931011]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_right = 50.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Debug Verbosity"
+vertical_alignment = 1
+
+[node name="value" type="SpinBox" parent="control/debug" unique_id=688031453]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+max_value = 10.0
+alignment = 2

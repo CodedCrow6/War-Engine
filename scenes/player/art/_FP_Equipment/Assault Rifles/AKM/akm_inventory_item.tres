@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://bm08oo1q48igr"]
+
+[ext_resource type="Script" uid="uid://dkrte3netc7a5" path="res://scenes/player/scripts/inventory_item.gd" id="1_2adii"]
+[ext_resource type="PackedScene" uid="uid://c3b4dqiaddsqy" path="res://scenes/weapons/player_scenes/fp_arms_akm.tscn" id="1_22ehp"]
+[ext_resource type="Texture2D" uid="uid://ck6bjorm7xbtq" path="res://Assets/InventoryIcons/AKM_Icon.PNG" id="2_50qts"]
+[ext_resource type="PackedScene" uid="uid://d047mcpogjaf5" path="res://scenes/player/art/_FP_Equipment/Assault Rifles/AKM/Pickup_AKM.fbx" id="3_7m2s6"]
+
+[resource]
+script = ExtResource("1_2adii")
+item_name = &"AKM"
+item_id = 1
+is_weapon = true
+icon = ExtResource("2_50qts")
+pickup_scene = ExtResource("3_7m2s6")
+game_scene = ExtResource("1_22ehp")
+metadata/_custom_type_script = "uid://dkrte3netc7a5"

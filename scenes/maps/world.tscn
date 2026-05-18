@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://quhv5cwnnm6y"]
+
+[ext_resource type="Shader" uid="uid://d0smi3cv1s6m6" path="res://terrain_texturing_shader.tres" id="1_55aix"]
+[ext_resource type="Script" uid="uid://c3l5rflfokitq" path="res://scenes/maps/world.gd" id="1_pq5yi"]
+[ext_resource type="Script" uid="uid://di1gtcfcgbscd" path="res://shared_scripts/vfx_manager.gd" id="2_av32x"]
+[ext_resource type="Texture2D" uid="uid://dp7qlcy6xagu8" path="res://Assets/TerrainTextures/grass/patchy-meadow1_albedo.png" id="2_lvkeh"]
+[ext_resource type="Texture2D" uid="uid://bxuwa3ks1ck45" path="res://Assets/TerrainTextures/grass/rocky-rugged-terrain_1_albedo.png" id="3_74gp3"]
+[ext_resource type="PackedScene" uid="uid://53id2qy36rr8" path="res://scenes/player/scenes/player_controller.tscn" id="4_pq5yi"]
+[ext_resource type="PackedScene" uid="uid://dr5mi0q5ljvqm" path="res://scenes/maps/RandomProps/glowing_campfire_with_stones_coal_and_logs.glb" id="6_av32x"]
+[ext_resource type="PackedScene" uid="uid://busc6n16838bw" path="res://scenes/VFX/fire/scenes/fire_vfx.tscn" id="7_s5d3o"]
+[ext_resource type="PackedScene" uid="uid://c1nf7nmr4ejp6" path="res://scenes/simulation_nodes/simulation_debug_panel.tscn" id="9_s5d3o"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_av32x"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_s5d3o"]
+sky_material = SubResource("ProceduralSkyMaterial_av32x")
+
+[sub_resource type="Environment" id="Environment_dnf87"]
+background_mode = 2
+sky = SubResource("Sky_s5d3o")
+glow_enabled = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tlanf"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x3aai"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yicuf"]
+noise = SubResource("FastNoiseLite_x3aai")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trjxu"]
+render_priority = 0
+shader = ExtResource("1_55aix")
+shader_parameter/Albedo_A_Uv_Scale = 10.0
+shader_parameter/Albedo_A = ExtResource("2_lvkeh")
+shader_parameter/Albedo_B_Uv_Scale = 5.0
+shader_parameter/Albedo_B = ExtResource("3_74gp3")
+shader_parameter/Noise = SubResource("NoiseTexture2D_yicuf")
+shader_parameter/Noise_Weight = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aqth2"]
+material = SubResource("ShaderMaterial_trjxu")
+size = Vector2(200, 200)
+
+[node name="World" type="Node3D" unique_id=1947318567 node_paths=PackedStringArray("camp_fire", "vfx_manager")]
+script = ExtResource("1_pq5yi")
+camp_fire = NodePath("CampFire")
+vfx_manager = NodePath("VFXManager")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=181451321]
+environment = SubResource("Environment_dnf87")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=964374350]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="VFXManager" type="Node3D" parent="." unique_id=490129247]
+script = ExtResource("2_av32x")
+metadata/_custom_type_script = "uid://di1gtcfcgbscd"
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=2030278569]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=2054348374]
+shape = SubResource("ConcavePolygonShape3D_tlanf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=2033319611]
+mesh = SubResource("PlaneMesh_aqth2")
+
+[node name="PlayerController" parent="." unique_id=1577159589 instance=ExtResource("4_pq5yi")]
+
+[node name="CampFire" parent="." unique_id=1265839823 instance=ExtResource("6_av32x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="FireVFX" parent="." unique_id=1175446357 instance=ExtResource("7_s5d3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1204074, 0.37583494, -5.159855)
+debug_enabled = true
+
+[node name="Overlay" type="Control" parent="." unique_id=1213298788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SimulationDebugPanel" parent="Overlay" unique_id=573946463 instance=ExtResource("9_s5d3o")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 71.0
+offset_top = -2.0
+offset_right = 271.0
+offset_bottom = 298.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 0
+size_flags_vertical = 3

@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://pvx8rmfbusqg"]
+
+[ext_resource type="Script" uid="uid://80e42skcq30o" path="res://scenes/player/scripts/hud_manager.gd" id="1_oy1uc"]
+[ext_resource type="Shader" uid="uid://camrcc7ct3lou" path="res://scenes/player/shaders/supression_effect_shader.gdshader" id="2_46dhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp07f"]
+bg_color = Color(0.39688957, 0.39688915, 0.3968891, 0.25490198)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k2h4h"]
+bg_color = Color(0.6, 0.6, 0.6, 0.10980392)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_unolk"]
+bg_color = Color(0.44894964, 1.3055467e-06, 9.62615e-08, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hyypn"]
+bg_color = Color(0.6, 0.6, 0.6, 0.10980392)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uffrv"]
+bg_color = Color(0, 0.25187358, 1.6845763e-07, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hyypn"]
+shader = ExtResource("2_46dhk")
+shader_parameter/alpha = 1.0
+shader_parameter/inner_radius = 0.0
+shader_parameter/outer_radius = 1.0
+shader_parameter/pulse_strength = 0.2
+shader_parameter/pulse_speed = 8.0
+shader_parameter/noise_strength = 0.02
+shader_parameter/distortion_strength = 0.01
+shader_parameter/chromatic_aberration = 0.002
+shader_parameter/time = 0.0
+
+[node name="HudManager" type="Control" unique_id=1447215442 node_paths=PackedStringArray("parent")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oy1uc")
+parent = NodePath("")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1592259943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1261004764]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1795015336]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1885641488]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=442202786]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1150621739]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=762719799]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1920034261]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 90
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=760151903]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer" unique_id=534464691]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer" unique_id=1791992883]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=698617193]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp07f")
+text = "Vitals"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=751725514]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp07f")
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=1025223284]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15847212, 0.1584723, 0.15847275, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_k2h4h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_unolk")
+value = 80.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer4/PanelContainer/MarginContainer/VBoxContainer" unique_id=199279105]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32544062, 0.32544085, 0.32544157, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_hyypn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uffrv")
+value = 80.0
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=458457900]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=2123113068]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4" unique_id=892868505]
+visible = false
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="VFXMarginContainer" type="MarginContainer" parent="." unique_id=586406069]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="VFXMarginContainer" unique_id=410854234]
+
+[node name="ColorRect" type="ColorRect" parent="VFXMarginContainer/CanvasLayer" unique_id=1510878726]
+material = SubResource("ShaderMaterial_hyypn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

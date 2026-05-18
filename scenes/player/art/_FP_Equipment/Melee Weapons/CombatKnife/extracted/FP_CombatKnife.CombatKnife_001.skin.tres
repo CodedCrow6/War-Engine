@@ -1,0 +1,8 @@
+[gd_resource type="Skin" format=3 uid="uid://b7qrdjvy50pgf"]
+
+[resource]
+resource_name = "Skin"
+bind_count = 1
+bind/0/name = &"Weapon"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, -4.7683716e-07, 2.5241097e-16, -2.5241097e-16, 0, 1, -4.7683716e-07, -1, -1.2035893e-22, -6.777935e-08, -1.196223, -0.14214359)

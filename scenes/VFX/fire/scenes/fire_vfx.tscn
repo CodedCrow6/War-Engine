@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://busc6n16838bw"]
+
+[ext_resource type="Script" uid="uid://bpf55hv1gkdxe" path="res://scenes/VFX/fire/scripts/fire_vfx.gd" id="1_6gfc6"]
+[ext_resource type="Texture2D" uid="uid://d3w5scsw1wn2w" path="res://Assets/vfx_textures/brackeys_vfx_bundle/flipbooks/fire_01_8x8.tga" id="1_wva17"]
+[ext_resource type="Texture2D" uid="uid://dfedpk3wxquxr" path="res://Assets/vfx_textures/brackeys_vfx_bundle/flipbooks/flame_01_16x4.tga" id="2_65iuw"]
+[ext_resource type="Texture2D" uid="uid://doiy57s1qsvm6" path="res://Assets/vfx_textures/brackeys_vfx_bundle/flipbooks/wispy_smoke_02_8x8.tga" id="3_65iuw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6gfc6"]
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1rug"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("1_wva17")
+billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_ksbmx"]
+material = SubResource("StandardMaterial3D_b1rug")
+size = Vector2(5, 5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ykgip"]
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egsc6"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("2_65iuw")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 16
+particles_anim_v_frames = 4
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_noal8"]
+material = SubResource("StandardMaterial3D_egsc6")
+size = Vector2(2, 3)
+
+[sub_resource type="Gradient" id="Gradient_6gfc6"]
+offsets = PackedFloat32Array(0.16666667, 0.66071427)
+colors = PackedColorArray(0.20871013, 0.20871016, 0.20871007, 1, 0.6501282, 0.6501283, 0.65012807, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b1rug"]
+gradient = SubResource("Gradient_6gfc6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ksbmx"]
+gravity = Vector3(1, 2, 1)
+color_initial_ramp = SubResource("GradientTexture1D_b1rug")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykgip"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_65iuw")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 8
+particles_anim_v_frames = 8
+particles_anim_loop = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_egsc6"]
+material = SubResource("StandardMaterial3D_ykgip")
+size = Vector2(2, 3)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4s1rs"]
+radius = 15.0
+
+[node name="FireVFX" type="Node3D" unique_id=1175446357 node_paths=PackedStringArray("vfx_particle_1", "vfx_particle_2", "vfx_particle_3", "trigger_area")]
+script = ExtResource("1_6gfc6")
+vfx_particle_1 = NodePath("IntenseFire")
+vfx_particle_2 = NodePath("StaticFire")
+vfx_particle_3 = NodePath("Smoke")
+debug_enabled = false
+trigger_area = NodePath("Area3D")
+trigger_radius = 15.0
+particle_to_trigger = 2
+
+[node name="IntenseFire" type="GPUParticles3D" parent="." unique_id=486700452]
+visible = false
+amount = 1
+lifetime = 1.8
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_6gfc6")
+draw_pass_1 = SubResource("QuadMesh_ksbmx")
+
+[node name="StaticFire" type="GPUParticles3D" parent="." unique_id=1841050629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2937794, 0)
+amount = 1
+lifetime = 1.8
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ykgip")
+draw_pass_1 = SubResource("QuadMesh_noal8")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=1064116476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2937794, 0)
+lifetime = 2.0
+fixed_fps = 60
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ksbmx")
+draw_pass_1 = SubResource("QuadMesh_egsc6")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=674131713]
+collision_layer = 8192
+collision_mask = 272
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1206982894]
+shape = SubResource("SphereShape3D_4s1rs")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
